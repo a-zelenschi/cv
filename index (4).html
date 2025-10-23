@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CV — Andrei Zelenschi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1f6feb;
+    --light:#f6f8fb;
+    --muted:#6b7280;
+    --card:#ffffff;
+    --border:#e6eefc;
+    --maxw:900px;
+    --gap:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    margin:0;
+    background:linear-gradient(180deg,#f7fbff, #ffffff);
+    color:#0f1724;
+    padding:28px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    background:var(--card);
+    box-shadow:0 8px 30px rgba(15,23,36,0.06);
+    border-radius:10px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns: 280px 1fr;
+    gap:0;
+  }
+
+  /* SIDEBAR */
+  .sidebar{
+    background:linear-gradient(180deg, rgba(31,111,235,0.06), rgba(31,111,235,0.03));
+    padding:22px;
+    border-right:1px solid var(--border);
+    min-height:100%;
+  }
+  .photo{
+    width:120px;height:120px;border-radius:8px;
+    background:linear-gradient(180deg,#eaf2ff,#fff);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue);font-weight:700;font-size:14px;
+    margin:0 auto 14px auto;
+    border:1px dashed rgba(31,111,235,0.18);
+  }
+  .name{
+    text-align:center;
+    font-size:18px;font-weight:700;margin-bottom:6px;
+  }
+  .role{
+    text-align:center;font-size:13px;color:var(--muted);margin-bottom:14px;
+  }
+  .info-item{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:6px}
+  .info-item small{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+  .info-item a{color:var(--blue);text-decoration:none;word-break:break-all}
+  .skills-list, .lang-list{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .skill-pill{background:#fff;border:1px solid var(--border);padding:6px 8px;border-radius:6px;font-size:13px;color:#0f1724}
+  .aside-section{margin-top:18px}
+
+  /* MAIN */
+  .main{padding:24px 28px;}
+  .head-row{
+    display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px;
+  }
+  .title{
+    font-size:20px;font-weight:700;color:#0b1220;
+  }
+  .sub{color:var(--muted);font-size:13px;margin-top:4px}
+  hr.sep{border:0;height:1px;background:linear-gradient(90deg,transparent,#e6eefc,transparent);margin:16px 0;border-radius:2px}
+
+  h3{font-size:15px;margin:0 0 8px 0;color:#0b1220}
+  p.small{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+  .job{padding:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid var(--border);border-radius:8px;margin-bottom:12px}
+  .job .period{font-size:12px;color:var(--muted)}
+  .bullet{margin-top:8px;margin-left:16px}
+  .projects a{display:block;text-decoration:none;margin-bottom:6px;color:var(--blue);font-size:14px}
+  .meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .chip{background:var(--light);padding:6px 10px;border-radius:999px;font-size:13px;color:#0b1220;border:1px solid #e9f1ff}
+
+  /* Top actions */
+  .actions{display:flex;gap:8px;align-items:center}
+  .btn{background:var(--blue);color:white;padding:8px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+  .btn.secondary{background:transparent;color:var(--blue);border:1px solid var(--border)}
+  .print-only{display:none}
+
+  /* Responsive */
+  @media (max-width:880px){
+    .wrap{grid-template-columns:1fr;padding:0}
+    .sidebar{order:2;border-right:0;border-top:1px solid var(--border)}
+    .main{order:1}
+  }
+  @media print{
+    body{background:white;padding:0}
+    .actions, .print-only{display:none}
+    .wrap{box-shadow:none;border-radius:0}
+  }
+
+  /* small touches */
+  .section{margin-bottom:14px}
+  a.link-plain{color:var(--blue);text-decoration:none}
+  footer{font-size:12px;color:var(--muted);margin-top:18px;text-align:right}
+</style>
+</head>
+<body>
+  <div style="max-width:var(--maxw);margin:0 auto;padding-bottom:28px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div>
+        <strong style="font-size:18px">Curriculum Vitae</strong>
+        <div style="color:var(--muted);font-size:13px;margin-top:4px">Andrei Zelenschi — Junior Software Engineer</div>
+      </div>
+      <div class="actions">
+        <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+        <button class="btn secondary" onclick="toggleTheme()">Contrast</button>
+      </div>
+    </div>
+
+    <div class="wrap" role="main" aria-label="CV Andrei Zelenschi">
+  <aside class="sidebar" aria-label="Informații personale">
+    <img src="https://media.licdn.com/dms/image/v2/C4D03AQHoY8mRXJ8JJg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1623053032213?e=1762992000&v=beta&t=PWfp2Hi5cEk5AaTEQQpeN9MyUxpoxz1KHp7trP_-UlY" alt="Fotografie Andrei Zelenschi" class="photo" />
+    <div class="name">Andrei Zelenschi</div>
+    <div class="role">Junior Software Engineer</div>
+
+
+
+
+        <div class="aside-section" aria-labelledby="contact-title">
+          <h4 id="contact-title" style="font-size:13px;margin:0 0 8px 0;color:#0b1220">Contact</h4>
+          <div class="info-item">
+            <div>
+              <small>Email</small>
+              <a href="mailto:a.zelenschi@gmail.com">a.zelenschi@gmail.com</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div>
+              <small>Telefon</small>
+              <a href="tel:+37379262122">079 262 122</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="aside-section" aria-labelledby="skills-title">
+          <h4 id="skills-title" style="font-size:13px;margin:8px 0;color:#0b1220">Competențe</h4>
+          <div class="skills-list" role="list">
+            <div class="skill-pill">Next.js / React / JavaScript</div>
+            <div class="skill-pill">HTML / CSS</div>
+            <div class="skill-pill">Node.js / API Integration</div>
+            <div class="skill-pill">C++ / Algoritmi</div>
+            <div class="skill-pill">MySQL / MS Access</div>
+            <div class="skill-pill">Git / GitHub</div>
+          </div>
+        </div>
+
+        <div class="aside-section" aria-labelledby="lang-title">
+          <h4 id="lang-title" style="font-size:13px;margin:8px 0;color:#0b1220">Limbi</h4>
+          <div class="lang-list">
+            <div class="skill-pill">Română — nativ</div>
+            <div class="skill-pill">Engleză — intermediar</div>
+          </div>
+        </div>
+
+        <div class="aside-section" aria-labelledby="certs">
+          <h4 id="certs" style="font-size:13px;margin:8px 0;color:#0b1220">Cursuri</h4>
+          <div class="skill-pill">Web Design and Development — Tekwill (07.2022)</div>
+        </div>
+      </aside>
+
+      <section class="main" aria-label="Detalii profesionale">
+        <div class="head-row">
+          <div>
+            <div class="title">Junior Software Engineer — Building full-stack apps with Next.js</div>
+            <div class="sub">Pasionat de dezvoltare web, predare informatică și proiecte educaționale.</div>
+          </div>
+        </div>
+
+        <hr class="sep">
+
+        <div class="section">
+          <h3>Experiență profesională</h3>
+
+          <div class="job" aria-labelledby="job1">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start">
+              <strong>Profesor de informatică — Instituția de Învățământ Privată „Excelsis”</strong>
+              <div class="period">07.10.2022 – prezent</div>
+            </div>
+            <div class="bullet">
+              <p class="small">Predare informatică: algoritmi, baze de date, web design. Dezvoltare de materiale educaționale digitale și aplicații interactive.</p>
+            </div>
+          </div>
+
+          <div class="job">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start">
+              <strong>Profesor de fizică și informatică — Liceul Teoretic „Mihai Marinciuc”</strong>
+              <div class="period">20.03.2016 – 04.10.2022</div>
+            </div>
+            <div class="bullet">
+              <p class="small">Predare C++, HTML/CSS, baze de date MS Access. Coordonare laboratoare și proiecte IT școlare.</p>
+            </div>
+          </div>
+
+          <div class="job">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start">
+              <strong>Profesor de fizică — Colegiul Tehnologic</strong>
+              <div class="period">20.02.2016 – 31.05.2016</div>
+            </div>
+          </div>
+
+          <div class="job">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start">
+              <strong>Educator — Tabără de odihnă pentru copii</strong>
+              <div class="period">20.06.2015 – 20.08.2015</div>
+            </div>
+          </div>
+
+          <div class="job">
+            <div>
+              <strong>Practici pedagogice — LT „Ștefan cel Mare”</strong>
+              <div class="period">2014, 2016</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section">
+          <h3>Educație</h3>
+          <div class="job">
+            <strong>Master — Tehnologii Informaționale în Instruire</strong>
+            <div class="period">Tiraspol State University — 09.2016 – 06.2018</div>
+          </div>
+          <div class="job">
+            <strong>Licență — Fizică, Matematică și Tehnologii Informaționale</strong>
+            <div class="period">Tiraspol State University — 09.2012 – 06.2016</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Proiecte</h3>
+          <div class="projects">
+            <a href="https://medi-gamma.vercel.app/" target="_blank" rel="noopener">• medi-gamma</a>
+            <a href="https://learn-english-pperdyv2z-a-zelenschi.vercel.app/" target="_blank" rel="noopener">• learn-english (project)</a>
+            <a href="https://search-lp77x06ph-a-zelenschi.vercel.app/" target="_blank" rel="noopener">• search (project)</a>
+            <a href="https://limbajul-html.vercel.app/index.html" target="_blank" rel="noopener">• limbajul-html</a>
+            <a href="https://app.lowcoder.cloud/apps/65d0717c18038e638fee7655/view" target="_blank" rel="noopener">• lowcoder app</a>
+            <a href="https://informatica-distractiva.vercel.app/" target="_blank" rel="noopener">• informatica-distractiva</a>
+            <a href="https://send-grid.vercel.app/" target="_blank" rel="noopener">• send-grid demo</a>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Alte activități</h3>
+          <p class="small">Freelancer Next.js — dezvoltare proiecte web, materiale educaționale pentru elevi, design de lecții interactive.</p>
+        </div>
+
+        <footer>
+          Actualizat: <span id="last-updated"></span>
+        </footer>
+      </section>
+    </div>
+  </div>
+
+<script>
+  // populate last-updated with today's date (format DD.MM.YYYY)
+  (function(){
+    const d = new Date();
+    const dd = String(d.getDate()).padStart(2,'0');
+    const mm = String(d.getMonth()+1).padStart(2,'0');
+    const yyyy = d.getFullYear();
+    document.getElementById('last-updated').textContent = dd + '.' + mm + '.' + yyyy;
+  })();
+
+  // Toggle high-contrast / alternate theme for readability if needed
+  function toggleTheme(){
+    document.documentElement.style.setProperty('--blue', getComputedStyle(document.documentElement).getPropertyValue('--blue') === '#1f6feb' ? '#0a3d62' : '#1f6feb');
+    // small visual invert effect for print preview convenience
+    document.body.style.transition = 'filter .25s';
+    if(!document.body.dataset.contrast){
+      document.body.style.filter = 'contrast(1.05) saturate(1.05)';
+      document.body.dataset.contrast = 'on';
+    } else {
+      document.body.style.filter = '';
+      delete document.body.dataset.contrast;
+    }
+  }
+</script>
+</body>
+</html>
